@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SO - TRABAJO - TITLE</title>
+    <link href="{{ url_for('static',filename='styles/styles.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="{{ url_for('static',filename='styles/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+      <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="container-fluid">
+          <span class="navbar-brand mb-0 h1">TU KAMBIO UPCINO</span>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container mt-5 mb-5">
+        <div class="row ">
+          <div class="col-12">
+                <table class="table table-bordered table-hover table-sm table-dark table-striped">
+                  <thead>
+                    <tr">
+                      <th class="p-3">Nombre</th>
+                      <th class="p-3">Precio de compra</th>
+                      <th class="p-3">Precio de venta</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for row in table %}
+                    <tr>
+                      <td class="p-2">{{ row[0] }}</td>
+                      <td class="p-2">{{ row[1] }}</td>
+                      <td class="p-2">{{ row[2] }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+          </div>
+        </div>
+        <div class="row mt-5 ml-5 mr-5">
+          <h2>Notificación cuando el valor del dolar</h2>
+        </div>
+
+        <form class="row align-items-center m-3" action="/form-ok" method="POST" id="form-noti">
+          <div class="col">
+            <div>
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="precio_compra">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Precio de compra
+              </label>
+            </div>
+            <div>
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="precio_venta">
+              <label class="form-check-label" for="flexRadioDefault2">
+                Precio de venta
+              </label>
+            </div>
+          </div>
+          <div class="col">
+            <label for="correo" class="form-label">
+              Correo<input type="text" name="correo" class="form-control" id="correo">
+            </label>
+            <label for="cantidad" class="form-label">
+              Cantidad<input type="text" name="cantidad" class="form-control" id="cantidad">
+            </label>
+            <label for="entidad" class="form-label">
+              Entidad<input type="text" name="entidad" class="form-control" id="entidad">
+            </label>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+
+  </main>
+
+  <footer class="bg-dark text-white text-center">
+      <div class="container p-3">
+        <section class="row">
+          <div class="col-md-4 col-sm-12 text-center p-2">
+            <span>Libro de reclamaciones</span>
+          </div>
+          <div class="col-md-4 col-sm-12 text-center p-2">
+            <span >Terminos y condiciones</span>
+          </div>
+          <div class="col-md-4 col-sm-12 text-center p-2">
+            <span>Nosotros</span>
+          </div>
+        </section>
+      </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Notificación creada -->
+  <script>
+    document.getElementById("form-noti").addEventListener("submit", function(event) {
+      alert("Notificación creada");
+      return 0;
+    });
+</script>
+
+
+</body>
+</html>
