@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 #Conexion a mi capa de datos
 bdd_connection = mysql.connector.connect(
-    host = '3.87.221.0',
+    host = '44.212.72.215',
     user= 'adminBDD',
     password='adminBDD23-1',
     database='trabajoSObdd'
@@ -25,15 +25,6 @@ def obtener_tipo_cambio(classhtml, numlist):
     tipo_de_cambio_element = tipo_de_cambio_elements[numlist]
     tipo_de_cambio = tipo_de_cambio_element.text
     return tipo_de_cambio
-
-"""def update_tipo_cambio():
-    valor = obtener_tipo_cambio('text-2xl md:w-40 flex justify-center', 0, 10)
-    for i in range(len(valor)):
-        precio_compra = valor[i*2]
-        precio_venta = valor[i*2+1]
-
-        bdd.execute(('UPDATE Negocio SET precio_compra = %s, precio_venta = %s WHERE id_negocio = %s'), (precio_compra, precio_venta, str(i+1),))
-        bdd_connection.commit()"""
 
 def update_tipo_cambio():
     j = 1
