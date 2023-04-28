@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 #Conexion a mi capa de datos
 bdd_connection = mysql.connector.connect(
-    host = '44.212.72.215',
+    host = '3.91.222.78',
     user= 'adminBDD',
     password='adminBDD23-1',
     database='trabajoSObdd'
@@ -55,7 +55,7 @@ app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_SSL'] = True
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USERNAME'] = 'tukambioupc@gmail.com'
-app.config['MAIL_PASSWORD'] = 'iuvydzwwagisolal'
+app.config['MAIL_PASSWORD'] = 'ktsbqhwxpncsmplr'
 email = Mail(app)
 
 @app.route('/form-ok', methods=['GET', 'POST'])
@@ -86,3 +86,4 @@ def notificacion_correo():
 
     return redirect(url_for('nombre_negocio'))
 #-------------------------------------------------------------------
+
