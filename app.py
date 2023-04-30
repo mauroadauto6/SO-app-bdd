@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 #Conexion a mi capa de datos
 bdd_connection = mysql.connector.connect(
-    host = '3.85.238.251',
+    host = '54.152.231.118',
     user= 'adminBDD',
     password='adminBDD23-1',
     database='trabajoSObdd'
